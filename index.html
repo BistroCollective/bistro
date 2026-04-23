@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro - Home</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Spicy+Rice&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Spicy+Rice&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="img/bg.jpg" class="bg-video"
+        id="bgVideo">
+        <source src="img/bgvideo.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <div class="splash-screen" id="splashScreen">
+        <img src="img/logonobg.png" alt="Bistro Logo Splash" class="splash-logo">
+    </div>
+    <script>
+        if (sessionStorage.getItem('splashShown')) {
+            document.getElementById('splashScreen').style.display = 'none';
+        } else {
+            sessionStorage.setItem('splashShown', 'true');
+        }
+    </script>
+
+    <header class="header">
+        <button class="hamburger-btn" onclick="openMenu()">
+            <svg viewBox="0 0 100 80" width="30" height="30" fill="white">
+                <rect width="100" height="15"></rect>
+                <rect y="30" width="100" height="15"></rect>
+                <rect y="60" width="100" height="15"></rect>
+            </svg>
+        </button>
+        <h1 data-i18n="title-welcome">Welcome to Bistro</h1>
+    </header>
+
+    <nav id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span data-i18n="nav-home">Home</span></a>
+        <a href="events.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg><span data-i18n="nav-events">Events</span></a>
+        <a href="about.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg><span data-i18n="nav-about">Who are we?</span></a>
+    </nav>
+
+    <div class="hero">
+        <div class="top-content">
+            <a href="https://instagram.com/bistrolab_" target="_blank" class="logo-link">
+                <img src="img/logonobg.png" alt="Bistro Logo" class="logo" fetchpriority="high">
+            </a>
+
+            <div class="artists-section">
+                <h2 data-i18n="title-artists">Artists in which Bistro believes:</h2>
+                <ul class="artists-list">
+                    <li><a href="https://www.instagram.com/grimaceofthewhitefly/" target="_blank" class="artist-link"><img
+                                src="img/igicon.png" alt="Instagram" class="artist-icon">
+                            Grimace of the White Fly</a> - <a
+                            href="https://www.youtube.com/watch?v=2hEdyPz7T-0&list=RD2hEdyPz7T-0&start_radio=1" target="_blank"
+                            class="track-link">Aleatory <img src="img/yt.png" alt="YouTube" class="platform-icon"></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/fkk.band/" target="_blank" class="artist-link"><img src="img/igicon.png"
+                                alt="Instagram" class="artist-icon">
+                            Frei Klangen Kultur</a> - <a
+                            href="https://www.youtube.com/watch?v=P02HD7DRuSU&list=RDP02HD7DRuSU&start_radio=1" target="_blank"
+                            class="track-link">Wall of Sound <img src="img/yt.png" alt="YouTube"
+                                class="platform-icon"></a></li>
+                    <li><a href="https://www.instagram.com/velluto_ig/" target="_blank" class="artist-link"><img src="img/igicon.png"
+                                alt="Instagram" class="artist-icon">
+                            Velluto</a> - <a
+                            href="https://www.youtube.com/watch?v=9LeUk_GMLZ4&list=RD9LeUk_GMLZ4&start_radio=1" target="_blank"
+                            class="track-link">Nel Meriggio <img src="img/yt.png" alt="YouTube"
+                                class="platform-icon"></a></li>
+                    <li><a href="https://www.instagram.com/jaluspit/" target="_blank" class="artist-link"><img src="img/igicon.png"
+                                alt="Instagram" class="artist-icon">
+                            jaluspit</a> - <a
+                            href="https://open.spotify.com/intl-it/artist/0uLqokoRxbER3ren1IMp0M?si=giDXkue3SwWwqXtq_fvGNg" target="_blank"
+                            class="track-link">303 <img src="img/spotify.png" alt="Spotify" class="platform-icon"></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/_borstal_/" target="_blank" class="artist-link"><img src="img/igicon.png"
+                                alt="Instagram" class="artist-icon"> Borstal</a> - <a
+                            href="https://open.spotify.com/intl-it/track/0Xdz7Y1vNQgFiDEBHoqlog?si=708ae2086b1d41c9" target="_blank"
+                            class="track-link">CONCRETE & FLASH <img src="img/spotify.png" alt="Spotify"
+                                class="platform-icon"></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/rain_taylor_/" target="_blank" class="artist-link"><img src="img/igicon.png"
+                                alt="Instagram" class="artist-icon">
+                            Rain Taylor</a> - <a
+                            href="https://www.youtube.com/watch?v=WcVyCB7dc6Y&list=RDWcVyCB7dc6Y&start_radio=1s" target="_blank"
+                            class="track-link">Repression <img src="img/yt.png" alt="YouTube" class="platform-icon"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="lang-switcher">
+            <button class="lang-toggle-btn" onclick="toggleLang()">IT</button>
+        </div>
+        <div class="footer-contacts">
+            <p data-i18n="footer-contacts">Contacts:</p>
+            <ul>
+                <li>
+                    <img src="img/emailicon.png" alt="Email" class="contact-icon" loading="lazy">
+                    Email: <span class=""> collettivobistro@gmail.com</span>
+                </li>
+                <li>
+                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" loading="lazy">
+                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" class="">
+                        @bistrolab_</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="lang.js" defer></script>
+    <script>
+        // Safari video autoplay fix: force play after user interaction or directly
+        document.addEventListener('DOMContentLoaded', function () {
+            var vid = document.getElementById('bgVideo');
+            if (vid) {
+                vid.play().catch(function () {
+                    // Autoplay blocked – wait for first user interaction
+                    document.body.addEventListener('touchstart', function () { vid.play(); }, { once: true });
+                    document.body.addEventListener('click', function () { vid.play(); }, { once: true });
+                });
+            }
+        });
+
+        function openMenu() {
+            document.getElementById("sideMenu").style.left = "0";
+        }
+        function closeMenu() {
+            document.getElementById("sideMenu").style.left = "-250px";
+        }
+    </script>
+</body>
+
+</html>
