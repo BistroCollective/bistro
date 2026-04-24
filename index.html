@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bistro Collective – a self-managed cooperative combining creativity, production, and culture between Romagna and Lombardia.">
     <title>Bistro - Home</title>
     <link rel="icon" href="img/favicon.png">
     <!-- DNS prefetch for external resources -->
@@ -28,7 +29,7 @@
     <div class="video-overlay"></div>
 
     <div class="splash-screen" id="splashScreen">
-        <img src="img/logonobg.png" alt="Bistro Logo Splash" class="splash-logo">
+        <img src="img/logonobg.png" alt="Bistro Logo Splash" class="splash-logo" width="800" height="800">
     </div>
     <script>
         if (sessionStorage.getItem('splashShown')) {
@@ -39,7 +40,7 @@
     </script>
 
     <header class="header">
-        <button class="hamburger-btn" onclick="openMenu()">
+        <button class="hamburger-btn" onclick="openMenu()" aria-label="Open menu">
             <svg viewBox="0 0 100 80" width="30" height="30" fill="white">
                 <rect width="100" height="15"></rect>
                 <rect y="30" width="100" height="15"></rect>
@@ -50,7 +51,7 @@
     </header>
 
     <nav id="sideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()" aria-label="Close menu">&times;</a>
         <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon">
                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
             </svg><span data-i18n="nav-home">Home</span></a>
@@ -66,46 +67,46 @@
 
     <div class="hero">
         <div class="top-content">
-            <a href="https://instagram.com/bistrolab_" target="_blank" class="logo-link">
-                <img src="img/logonobg.png" alt="Bistro Logo" class="logo" fetchpriority="high">
+            <a href="https://instagram.com/bistrolab_" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img src="img/logonobg.png" alt="Bistro Logo" class="logo" width="800" height="800" fetchpriority="high" decoding="async">
             </a>
 
             <div class="artists-section">
                 <h2 data-i18n="title-artists">Artists in which Bistro believes:</h2>
                 <ul class="artists-list">
-                    <li><a href="https://www.instagram.com/grimaceofthewhitefly/" target="_blank"
-                            class="artist-link"><img src="img/igicon.png" alt="Instagram" class="artist-icon">
+                    <li><a href="https://www.instagram.com/grimaceofthewhitefly/" target="_blank" rel="noopener noreferrer"
+                            class="artist-link"><img src="img/igicon.png" alt="Instagram" class="artist-icon" width="48" height="48" loading="lazy" decoding="async">
                             Grimace of the White Fly</a> - <a
                             href="https://www.youtube.com/watch?v=2hEdyPz7T-0&list=RD2hEdyPz7T-0&start_radio=1"
-                            target="_blank" class="track-link">Aleatory <img src="img/yt.png" alt="YouTube"
-                                class="platform-icon"></a>
+                            target="_blank" rel="noopener noreferrer" class="track-link">Aleatory <img src="img/yt.png" alt="YouTube"
+                                class="platform-icon" width="24" height="24" loading="lazy" decoding="async"></a>
                     </li>
-                    <li><a href="https://www.instagram.com/fkk.band/" target="_blank" class="artist-link"><img
-                                src="img/igicon.png" alt="Instagram" class="artist-icon">
+                    <li><a href="https://www.instagram.com/fkk.band/" target="_blank" rel="noopener noreferrer" class="artist-link"><img
+                                src="img/igicon.png" alt="Instagram" class="artist-icon" width="48" height="48" loading="lazy" decoding="async">
                             Frei Klangen Kultur</a> - <a
                             href="https://www.youtube.com/watch?v=P02HD7DRuSU&list=RDP02HD7DRuSU&start_radio=1"
-                            target="_blank" class="track-link">Wall of Sound <img src="img/yt.png" alt="YouTube"
-                                class="platform-icon"></a></li>
+                            target="_blank" rel="noopener noreferrer" class="track-link">Wall of Sound <img src="img/yt.png" alt="YouTube"
+                                class="platform-icon" width="24" height="24" loading="lazy" decoding="async"></a></li>
 
-                    <li><a href="https://www.instagram.com/jaluspit/" target="_blank" class="artist-link"><img
-                                src="img/igicon.png" alt="Instagram" class="artist-icon">
+                    <li><a href="https://www.instagram.com/jaluspit/" target="_blank" rel="noopener noreferrer" class="artist-link"><img
+                                src="img/igicon.png" alt="Instagram" class="artist-icon" width="48" height="48" loading="lazy" decoding="async">
                             jaluspit</a> - <a
                             href="https://open.spotify.com/intl-it/artist/0uLqokoRxbER3ren1IMp0M?si=giDXkue3SwWwqXtq_fvGNg"
-                            target="_blank" class="track-link">303 <img src="img/spotify.png" alt="Spotify"
-                                class="platform-icon"></a>
+                            target="_blank" rel="noopener noreferrer" class="track-link">303 <img src="img/spotify.png" alt="Spotify"
+                                class="platform-icon" width="24" height="24" loading="lazy" decoding="async"></a>
                     </li>
-                    <li><a href="https://www.instagram.com/_borstal_/" target="_blank" class="artist-link"><img
-                                src="img/igicon.png" alt="Instagram" class="artist-icon"> Borstal</a> - <a
+                    <li><a href="https://www.instagram.com/_borstal_/" target="_blank" rel="noopener noreferrer" class="artist-link"><img
+                                src="img/igicon.png" alt="Instagram" class="artist-icon" width="48" height="48" loading="lazy" decoding="async"> Borstal</a> - <a
                             href="https://open.spotify.com/intl-it/track/0Xdz7Y1vNQgFiDEBHoqlog?si=708ae2086b1d41c9"
-                            target="_blank" class="track-link">CONCRETE & FLASH <img src="img/spotify.png" alt="Spotify"
-                                class="platform-icon"></a>
+                            target="_blank" rel="noopener noreferrer" class="track-link">CONCRETE & FLASH <img src="img/spotify.png" alt="Spotify"
+                                class="platform-icon" width="24" height="24" loading="lazy" decoding="async"></a>
                     </li>
-                    <li><a href="https://www.instagram.com/rain_taylor_/" target="_blank" class="artist-link"><img
-                                src="img/igicon.png" alt="Instagram" class="artist-icon">
+                    <li><a href="https://www.instagram.com/rain_taylor_/" target="_blank" rel="noopener noreferrer" class="artist-link"><img
+                                src="img/igicon.png" alt="Instagram" class="artist-icon" width="48" height="48" loading="lazy" decoding="async">
                             Rain Taylor</a> - <a
                             href="https://www.youtube.com/watch?v=WcVyCB7dc6Y&list=RDWcVyCB7dc6Y&start_radio=1s"
-                            target="_blank" class="track-link">Repression <img src="img/yt.png" alt="YouTube"
-                                class="platform-icon"></a>
+                            target="_blank" rel="noopener noreferrer" class="track-link">Repression <img src="img/yt.png" alt="YouTube"
+                                class="platform-icon" width="24" height="24" loading="lazy" decoding="async"></a>
                     </li>
                 </ul>
             </div>
@@ -120,12 +121,12 @@
             <p data-i18n="footer-contacts">Contacts:</p>
             <ul>
                 <li>
-                    <img src="img/emailicon.png" alt="Email" class="contact-icon" loading="lazy">
-                    Email: <span class=""> collettivobistro@gmail.com</span>
+                    <img src="img/emailicon.png" alt="Email" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    Email: <span class="">collettivobistro@gmail.com</span>
                 </li>
                 <li>
-                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" loading="lazy">
-                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" class="">
+                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" rel="noopener noreferrer" class="">
                         @bistrolab_</a>
                 </li>
             </ul>
@@ -133,26 +134,7 @@
     </footer>
 
     <script src="lang.js" defer></script>
-    <script>
-        // Safari video autoplay fix: force play after user interaction or directly
-        document.addEventListener('DOMContentLoaded', function () {
-            var vid = document.getElementById('bgVideo');
-            if (vid) {
-                vid.play().catch(function () {
-                    // Autoplay blocked – wait for first user interaction
-                    document.body.addEventListener('touchstart', function () { vid.play(); }, { once: true });
-                    document.body.addEventListener('click', function () { vid.play(); }, { once: true });
-                });
-            }
-        });
-
-        function openMenu() {
-            document.getElementById("sideMenu").style.left = "0";
-        }
-        function closeMenu() {
-            document.getElementById("sideMenu").style.left = "-250px";
-        }
-    </script>
+    <script src="main.js" defer></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Bistro Collective – who we are and what we do. Production, mixing, recordings, music videos, and live events.">
     <title>Bistro - Who we are</title>
     <link rel="icon" href="img/favicon.png">
     <!-- DNS prefetch for external resources -->
@@ -24,7 +25,7 @@
     <div class="video-overlay"></div>
 
     <header class="header events-header">
-        <button class="hamburger-btn" onclick="openMenu()">
+        <button class="hamburger-btn" onclick="openMenu()" aria-label="Open menu">
             <svg viewBox="0 0 100 80" width="30" height="30" fill="white">
                 <rect width="100" height="15"></rect>
                 <rect y="30" width="100" height="15"></rect>
@@ -33,12 +34,12 @@
         </button>
         <h1 data-i18n="title-bistro-lab">Bistro Lab</h1>
         <a href="index.html" class="events-logo-link">
-            <img src="img/logonobg.png" alt="Bistro Logo" class="events-logo">
+            <img src="img/logonobg.png" alt="Bistro Logo" class="events-logo" width="800" height="800" decoding="async">
         </a>
     </header>
 
     <nav id="sideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()" aria-label="Close menu">&times;</a>
         <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span data-i18n="nav-home">Home</span></a>
         <a href="events.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg><span data-i18n="nav-events">Events</span></a>
         <a href="about.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg><span data-i18n="nav-about">Who are we?</span></a>
@@ -65,12 +66,12 @@
             <p data-i18n="footer-contacts">Contacts:</p>
             <ul>
                 <li>
-                    <img src="img/emailicon.png" alt="Email" class="contact-icon" loading="lazy">
-                    Email: <span class=""> collettivobistro@gmail.com</span>
+                    <img src="img/emailicon.png" alt="Email" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    Email: <span class="">collettivobistro@gmail.com</span>
                 </li>
                 <li>
-                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" loading="lazy">
-                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" class="">
+                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" rel="noopener noreferrer" class="">
                         @bistrolab_</a>
                 </li>
             </ul>
@@ -78,25 +79,7 @@
     </footer>
 
     <script src="lang.js" defer></script>
-    <script>
-        // Safari video autoplay fix
-        document.addEventListener('DOMContentLoaded', function () {
-            var vid = document.getElementById('bgVideo');
-            if (vid) {
-                vid.play().catch(function () {
-                    document.body.addEventListener('touchstart', function () { vid.play(); }, { once: true });
-                    document.body.addEventListener('click', function () { vid.play(); }, { once: true });
-                });
-            }
-        });
-
-        function openMenu() {
-            document.getElementById("sideMenu").style.left = "0";
-        }
-        function closeMenu() {
-            document.getElementById("sideMenu").style.left = "-250px";
-        }
-    </script>
+    <script src="main.js" defer></script>
 </body>
 
 </html>

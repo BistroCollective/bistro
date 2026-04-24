@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming Bistro Collective events – live music, art, and culture between Romagna and Lombardia.">
     <title>Bistro - Events</title>
     <link rel="icon" href="img/favicon.png">
     <!-- DNS prefetch for external resources -->
@@ -30,7 +31,7 @@
     <div class="video-overlay"></div>
 
     <header class="header events-header">
-        <button class="hamburger-btn" onclick="openMenu()">
+        <button class="hamburger-btn" onclick="openMenu()" aria-label="Open menu">
             <svg viewBox="0 0 100 80" width="30" height="30" fill="white">
                 <rect width="100" height="15"></rect>
                 <rect y="30" width="100" height="15"></rect>
@@ -39,12 +40,12 @@
         </button>
         <h1 data-i18n="title-future-events">Future Events</h1>
         <a href="index.html" class="events-logo-link">
-            <img src="img/logonobg.png" alt="Bistro Logo" class="events-logo">
+            <img src="img/logonobg.png" alt="Bistro Logo" class="events-logo" width="800" height="800" decoding="async">
         </a>
     </header>
 
     <nav id="sideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()" aria-label="Close menu">&times;</a>
         <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" class="menu-icon">
                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
             </svg><span data-i18n="nav-home">Home</span></a>
@@ -61,10 +62,10 @@
     <div class="event-image-container">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/evento.jpg" alt="Event 0" class="event-image"></div>
-                <div class="swiper-slide"><img src="img/evento1.jpg" alt="Event 1" class="event-image"></div>
-                <div class="swiper-slide"><img src="img/evento2.jpg" alt="Event 2" class="event-image"></div>
-                <div class="swiper-slide"><img src="img/evento3.jpg" alt="Event 3" class="event-image"></div>
+                <div class="swiper-slide"><img src="img/evento.jpg" alt="Event 0" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="img/evento1.jpg" alt="Event 1" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="img/evento2.jpg" alt="Event 2" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="img/evento3.jpg" alt="Event 3" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -85,12 +86,12 @@
             <p data-i18n="footer-contacts">Contacts:</p>
             <ul>
                 <li>
-                    <img src="img/emailicon.png" alt="Email" class="contact-icon" loading="lazy">
-                    Email: <span class=""> collettivobistro@gmail.com</span>
+                    <img src="img/emailicon.png" alt="Email" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    Email: <span class="">collettivobistro@gmail.com</span>
                 </li>
                 <li>
-                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" loading="lazy">
-                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" class="">
+                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" rel="noopener noreferrer" class="">
                         @bistrolab_</a>
                 </li>
             </ul>
@@ -99,25 +100,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="lang.js" defer></script>
+    <script src="main.js" defer></script>
     <script>
-        // Safari video autoplay fix
-        document.addEventListener('DOMContentLoaded', function () {
-            var vid = document.getElementById('bgVideo');
-            if (vid) {
-                vid.play().catch(function () {
-                    document.body.addEventListener('touchstart', function () { vid.play(); }, { once: true });
-                    document.body.addEventListener('click', function () { vid.play(); }, { once: true });
-                });
-            }
-        });
-
-        function openMenu() {
-            document.getElementById("sideMenu").style.left = "0";
-        }
-        function closeMenu() {
-            document.getElementById("sideMenu").style.left = "-250px";
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper(".mySwiper", {
                 loop: true,
