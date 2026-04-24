@@ -366,6 +366,20 @@ h1 {
     filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.7));
 }
 
+.events-logo-link.centered {
+    position: static;
+    right: auto;
+}
+
+.about-header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.about-header .events-logo {
+    height: clamp(50px, 15vw, 90px);
+}
+
 .events-logo {
     height: clamp(30px, 8vw, 60px);
     width: auto;
