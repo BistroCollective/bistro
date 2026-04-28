@@ -79,6 +79,7 @@ h1 {
 
 .footer {
     position: relative;
+    z-index: 200;
 }
 
 .footer-contacts p {
@@ -419,6 +420,248 @@ h1 {
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
+
+/* Events page wrapper */
+.events-page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: clamp(20px, 4vw, 40px);
+}
+
+/* Top area: big coming-soon text */
+.events-main-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(30px, 6vw, 70px) clamp(10px, 3vw, 20px) clamp(30px, 5vw, 50px);
+    width: 100%;
+}
+
+/* "Altro in arrivo" — big heading */
+.coming-soon-text {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-family: 'Spicy Rice', serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin: 0 0 14px 0;
+    letter-spacing: 1px;
+}
+
+/* Stay tuned — under Altro in arrivo */
+.stay-tuned-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    font-family: 'Outfit', sans-serif;
+    margin: 8px 0 0 0;
+    text-align: center;
+}
+
+/* Last events card — styled like artists-section */
+.last-events-section {
+    margin-top: clamp(20px, 4vw, 40px);
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: clamp(15px, 4vw, 25px) clamp(15px, 5vw, 40px);
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 90vw;
+    max-width: 500px;
+    contain: content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 3vw, 20px);
+}
+
+/* "Ultimi eventi" title inside the card */
+.last-events-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Mini thumbnail inside the card — normal flow */
+.mini-thumb-wrapper {
+    position: relative;
+    width: clamp(180px, 40vw, 320px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mini-thumb-wrapper:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.85);
+}
+
+.mini-thumb-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mini-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease;
+}
+
+.mini-thumb-wrapper:hover .mini-thumb-overlay {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.mini-thumb-icon {
+    width: 36px;
+    height: 36px;
+    fill: white;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+}
+
+.mini-thumb-wrapper:hover .mini-thumb-icon {
+    opacity: 1;
+}
+
+/* Mobile: push last-events card further down */
+@media (max-width: 600px) {
+    .events-main-area {
+        padding-bottom: clamp(10px, 4vw, 20px);
+    }
+    .last-events-section {
+        margin-top: clamp(40px, 12vw, 80px);
+    }
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    background: rgba(0, 0, 0, 0.85);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: clamp(12px, 3vw, 24px);
+    right: clamp(12px, 3vw, 24px);
+    background: none;
+    border: none;
+    color: white;
+    font-size: clamp(2rem, 6vw, 3rem);
+    cursor: pointer;
+    line-height: 1;
+    z-index: 20001;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+/* Lightbox content column (swiper + link) */
+.lightbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 2vw, 18px);
+    width: min(90vw, 900px);
+}
+
+.lightboxSwiper {
+    width: 100%;
+    max-height: 72vh;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+/* Instagram info link below the slideshow */
+.lightbox-ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    padding: clamp(7px, 1.5vw, 10px) clamp(14px, 3vw, 22px);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
+}
+
+.lightbox-ig-link:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: scale(1.04);
+}
+
+.lightbox-ig-icon {
+    width: clamp(18px, 4vw, 24px);
+    height: clamp(18px, 4vw, 24px);
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+/* Mobile tweaks for lightbox */
+@media (max-width: 600px) {
+    .lightboxSwiper {
+        max-height: 60vh;
+    }
+    .lightbox-img {
+        max-height: 58vh;
+    }
+    .lightbox-ig-link {
+        font-size: 0.85rem;
+        padding: 7px 14px;
+    }
+}
+
 
 .about-content {
     flex: 1;

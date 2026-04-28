@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Upcoming Bistro Collective events – live music, art, and culture between Romagna and Lombardia.">
+    <meta name="description"
+        content="Upcoming Bistro Collective events – live music, art, and culture between Romagna and Lombardia.">
     <title>Bistro - Events</title>
     <link rel="icon" href="img/favicon.png">
     <!-- DNS prefetch for external resources -->
@@ -59,24 +60,59 @@
             </svg><span data-i18n="nav-about">Who are we?</span></a>
     </nav>
 
-    <div class="event-image-container">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/evento.jpg" alt="Event 0" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
-                <div class="swiper-slide"><img src="img/evento1.jpg" alt="Event 1" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
-                <div class="swiper-slide"><img src="img/evento2.jpg" alt="Event 2" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
-                <div class="swiper-slide"><img src="img/evento3.jpg" alt="Event 3" class="event-image" width="800" height="600" loading="lazy" decoding="async"></div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+    <!-- Events page content: relative wrapper -->
+    <div class="events-page-content">
+
+        <!-- Main events area: big text at top -->
+        <div class="events-main-area">
+            <p class="coming-soon-text" data-i18n="Coming-soon">Altro in arrivo</p>
+            <p class="stay-tuned-text" data-i18n="stay-tuned">STAY TUNED</p>
         </div>
-    </div>
 
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h3 data-i18n="Coming-soon" style="color: white; font-size: 2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">New
-            events coming soon</h3>
-    </div>
+        <!-- Last events card: title + thumbnail, like artists section -->
+        <div class="last-events-section">
+            <h2 class="last-events-title" data-i18n="last-events">Ultimi eventi</h2>
+            <div class="mini-thumb-wrapper" id="miniThumb" onclick="openLightbox(0)" title="Apri galleria">
+                <img src="img/evento.jpg" alt="Evento" class="mini-thumb-img" loading="lazy" decoding="async">
+                <div class="mini-thumb-overlay">
+                    <svg viewBox="0 0 24 24" class="mini-thumb-icon">
+                        <path
+                            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
 
+    </div><!-- /.events-page-content -->
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightboxOutside(event)">
+        <button class="lightbox-close" id="lightboxClose" onclick="closeLightbox()" aria-label="Close">&times;</button>
+
+        <div class="lightbox-content">
+            <div class="swiper lightboxSwiper" id="lightboxSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/evento.jpg" alt="Event 0" class="lightbox-img" decoding="async"></div>
+                    <div class="swiper-slide"><img src="img/evento1.jpg" alt="Event 1" class="lightbox-img" decoding="async"></div>
+                    <div class="swiper-slide"><img src="img/evento2.jpg" alt="Event 2" class="lightbox-img" decoding="async"></div>
+                    <div class="swiper-slide"><img src="img/evento3.jpg" alt="Event 3" class="lightbox-img" decoding="async"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- Instagram info link -->
+            <a href="https://www.instagram.com/p/DW1C6LmDUtD/?img_index=1"
+               target="_blank" rel="noopener noreferrer"
+               class="lightbox-ig-link"
+               onclick="event.stopPropagation()">
+                <img src="img/igicon.png" alt="Instagram" class="lightbox-ig-icon">
+                <span data-i18n="more-info">Più info qui</span>
+            </a>
+        </div>
+
+    </div>
 
     <footer class="footer">
         <div class="lang-switcher">
@@ -86,34 +122,67 @@
             <p data-i18n="footer-contacts">Contacts:</p>
             <ul>
                 <li>
-                    <img src="img/emailicon.png" alt="Email" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
+                    <img src="img/emailicon.png" alt="Email" class="contact-icon" width="48" height="48" loading="lazy"
+                        decoding="async">
                     Email: <span class="">collettivobistro@gmail.com</span>
                 </li>
                 <li>
-                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" width="48" height="48" loading="lazy" decoding="async">
-                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" rel="noopener noreferrer" class="">
+                    <img src="img/igicon.png" alt="Instagram" class="contact-icon" width="48" height="48" loading="lazy"
+                        decoding="async">
+                    Instagram: <a href="https://instagram.com/bistrolab_" target="_blank" rel="noopener noreferrer"
+                        class="">
                         @bistrolab_</a>
                 </li>
             </ul>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="lang.js" defer></script>
     <script src="main.js" defer></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var swiper = new Swiper(".mySwiper", {
-                loop: true,
-                autoplay: {
-                    delay: 8000,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
+        // Lightbox swiper instance
+        var lightboxSwiper = null;
+
+        function openLightbox(startIndex) {
+            var overlay = document.getElementById('lightboxOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            if (!lightboxSwiper) {
+                lightboxSwiper = new Swiper('#lightboxSwiper', {
+                    loop: true,
+                    initialSlide: startIndex || 0,
+                    navigation: {
+                        nextEl: '#lightboxSwiper .swiper-button-next',
+                        prevEl: '#lightboxSwiper .swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '#lightboxSwiper .swiper-pagination',
+                        clickable: true,
+                    },
+                    keyboard: { enabled: true },
+                });
+            } else {
+                lightboxSwiper.slideTo(startIndex || 0, 0);
+            }
+        }
+
+        function closeLightbox() {
+            var overlay = document.getElementById('lightboxOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeLightboxOutside(e) {
+            if (e.target === document.getElementById('lightboxOverlay')) {
+                closeLightbox();
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>

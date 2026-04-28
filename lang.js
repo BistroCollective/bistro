@@ -16,7 +16,9 @@ const dictionary = {
         "text-story-p2": "With Bistro Lab we organize events and evenings, curating a selection of artists we believe in and creating real spaces for connection and experimentation.",
         "text-story-p3": "We operate between Romagna and Lombardia, building a network that connects territories, scenes, and people.",
         "text-story-p4": "We offer a recording and mixing room, providing a complete service: posters, websites, logos, covers, photoshoots, and music videos, all in a single package, designed to develop an artistic project at 360°.",
-        "Coming-soon": "Other things coming soon..."
+        "Coming-soon": "Other things coming soon",
+        "last-events": "Last events",
+        "more-info": "More info here"
     },
     it: {
         "nav-home": "Home",
@@ -35,7 +37,9 @@ const dictionary = {
         "text-story-p2": "Con Bistro Lab organizziamo eventi e serate, curando una selezione di artisti in cui crediamo e creando spazi reali di connessione e sperimentazione.",
         "text-story-p3": "Operiamo tra la Romagna e la Lombardia, costruendo una rete che collega territori, scene e persone.",
         "text-story-p4": "Mettiamo a disposizione una sala per registrazione e mixing, offrendo un servizio completo: locandine, sito, loghi, copertine, photoshoot e videoclip, tutto in un unico pacchetto, pensato per sviluppare un progetto artistico a 360°.",
-        "Coming-soon": "Altro in arrivo..."
+        "Coming-soon": "Altro in arrivo",
+        "last-events": "Ultimi eventi",
+        "more-info": "Più info qui"
     }
 };
 
